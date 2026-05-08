@@ -1,0 +1,31 @@
+# LaTeX build artefacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.lof
+*.lot
+*.toc
+*.out
+*.synctex.gz
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# PDF output (uncomment if you don't want to track the built PDF)
+# thesis.pdf
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Claude Code local settings (per-user, not shared)
+.claude/settings.local.json

@@ -4,7 +4,7 @@
 - Master's/Bachelor's thesis based on an internship at a telecommunications
   defence company. Some content is sensitivity-flagged in `docs/company-context.md`.
 - Field: [fill in: e.g., secure waveform design, RF signal classification, etc.]
-- Target length: ~[N] pages. Language: [English / Italian].
+- Target length: ~[N] pages. Language: English.
 - LaTeX template: `thesis.tex`. Chapters live in `chapters/`. Bib in
   `references/bibliography.bib`.
 
@@ -37,4 +37,4 @@ For any chapter or section:
 
 ## Style
 - Academic but readable. Active voice where natural.
-- [Citation style: IEEE / APA / Vancouver — pick one.]
+- Citation style: IEEE

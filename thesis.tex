@@ -1,0 +1,94 @@
+% =====================================================================
+% Master's / Bachelor's Thesis — main file
+% Field: telecommunications / defence (fill in)
+% Build: latexmk -pdf thesis.tex   (or  pdflatex; bibtex; pdflatex; pdflatex)
+% =====================================================================
+\documentclass[12pt,a4paper,oneside]{report}
+
+% --- Encoding & language ---------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel} % change to italian if needed
+
+% --- Math & symbols --------------------------------------------------
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{siunitx}
+
+% --- Graphics & tables -----------------------------------------------
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% --- Code listings ---------------------------------------------------
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny\color{gray}
+}
+
+% --- Page layout -----------------------------------------------------
+\usepackage[a4paper,margin=2.8cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Bibliography ----------------------------------------------------
+% Choose ONE citation style (uncomment your pick). Default = IEEE.
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
+% \usepackage[backend=biber,style=apa]{biblatex}
+% \usepackage[backend=biber,style=numeric-comp]{biblatex}
+\addbibresource{references/bibliography.bib}
+
+% --- Hyperlinks (load late) ------------------------------------------
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+% --- Custom macros (project-wide) ------------------------------------
+\newcommand{\todo}[1]{\textbf{\textcolor{red}{[TODO: #1]}}}
+\usepackage{xcolor}
+
+% =====================================================================
+\begin{document}
+
+% --- Front matter ----------------------------------------------------
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\LARGE \textbf{Thesis Title}\par}
+  \vspace{1.5cm}
+  {\large Author Name \par}
+  \vspace{0.5cm}
+  {\large Supervisor: \textit{Prof. Name} \par}
+  {\large Co-supervisor: \textit{Name (Company)} \par}
+  \vfill
+  {\large University Name \\ Department of \dots \par}
+  \vspace{1cm}
+  {\large Academic Year 20XX/20XX \par}
+\end{titlepage}
+
+\cleardoublepage
+\begin{abstract}
+% HUMAN: write the abstract last, after the conclusion is stable.
+\input{chapters/00-abstract}
+\end{abstract}
+
+\cleardoublepage
+\tableofcontents
+\cleardoublepage
+
+% --- Body ------------------------------------------------------------
+\input{chapters/01-introduction}
+\input{chapters/02-literature-review}
+\input{chapters/03-methodology}
+\input{chapters/04-implementation}
+\input{chapters/05-results}
+\input{chapters/06-conclusion}
+
+% --- Back matter -----------------------------------------------------
+\printbibliography[heading=bibintoc,title={References}]
+
+\end{document}

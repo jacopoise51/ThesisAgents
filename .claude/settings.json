@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(./**)",
+      "Edit(./chapters/**)",
+      "Edit(./thesis.tex)",
+      "Edit(./references/bibliography.bib)",
+      "Write(./chapters/**)",
+      "Write(./references/notes/**)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(pdflatex:*)",
+      "Bash(bibtex:*)",
+      "Bash(latexmk:*)"
+    ],
+    "deny": [
+      "Edit(./references/papers/**)",
+      "Edit(./code/**)",
+      "Write(./references/papers/**)",
+      "Write(./code/**)"
+    ]
+  }
+}
