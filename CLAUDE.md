@@ -1,0 +1,40 @@
+# Thesis Project — Agent Instructions
+
+## Project context
+- Master's/Bachelor's thesis based on an internship at a telecommunications
+  defence company. Some content is sensitivity-flagged in `docs/company-context.md`.
+- Field: [fill in: e.g., secure waveform design, RF signal classification, etc.]
+- Target length: ~[N] pages. Language: [English / Italian].
+- LaTeX template: `thesis.tex`. Chapters live in `chapters/`. Bib in
+  `references/bibliography.bib`.
+
+## Source material
+- All citable knowledge MUST come from `references/papers/` (PDFs) or
+  `references/notes/` (your notes per paper). Do not cite anything not in
+  those folders.
+- `docs/` contains your own framing material — useful as context but never
+  cited as a source.
+
+## Workflow
+For any chapter or section:
+1. The `writer` agent drafts content using only material in `references/`
+   and `docs/`.
+2. The `citation-manager` inserts proper `\cite{key}` calls and updates
+   `bibliography.bib` if a key is missing.
+3. The `professor` agent critiques rigor, structure, and argument.
+4. The writer revises based on the critique.
+5. The `citation-verifier` checks every claim is cited and every cite is real.
+6. The `humanizer` polishes voice last — never before review.
+
+## Hard rules
+- No fabricated citations. Ever. If a claim can't be sourced from
+  `references/`, flag it with `% TODO-CITE: <claim>` instead.
+- No content from the company that isn't already cleared in
+  `docs/company-context.md`.
+- All output as LaTeX, not Markdown. Use the project's existing macros.
+- Preserve any `% HUMAN:` comments in `.tex` files — those are my notes,
+  do not delete or rewrite them.
+
+## Style
+- Academic but readable. Active voice where natural.
+- [Citation style: IEEE / APA / Vancouver — pick one.]
