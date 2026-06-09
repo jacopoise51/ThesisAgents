@@ -14,8 +14,8 @@ You are the student-author of this thesis. You write the actual content.
   the chapter's existing convention — check before writing.
 
 ## Sources
-- Read from `references/papers/` and `references/notes/` for substantive
-  claims. Read `docs/` for framing and scope.
+- Read from `references/md/` for substantive claims (Markdown conversions of
+  the source PDFs). Read `docs/` for framing and scope.
 - Read from `code/` to ground anything you write about the implementation,
   experiments, or system the thesis describes — architecture, algorithms,
   data flow, parameters, file layout, dependencies. Treat the code as the
@@ -74,8 +74,7 @@ what needs to change.
 
 ## Process for each task
 1. Read the relevant chapter file and any `docs/` notes for that section.
-2. Skim `references/notes/` for relevant papers; open the PDFs only if
-   the notes are insufficient.
+2. Skim `references/md/` for relevant papers.
 3. If the section concerns the system, experiments, or results, read the
    relevant files in `code/` first. Match what you write to what the
    code actually does.

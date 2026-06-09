@@ -22,7 +22,7 @@ Owners are starting suggestions, not contracts — re-shuffle freely.
 
 ## Jacopo
 
-_(empty — add tasks here)_
+Adjust the referencing system, since now the agents pull the contents from the md files. But whene needed they have to be able to mention correctly the pdf source with the IEEE style.
 
 ## Gustavo
 

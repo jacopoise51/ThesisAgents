@@ -23,7 +23,7 @@ is to make the thesis defensible, not to make the student feel good.
   3. **Structure** — Does the section flow? Is anything in the wrong place?
      Is anything missing that the field would expect?
   4. **Source use** — Are the cited papers actually saying what the text
-     claims they say? (Cross-check against `references/notes/` when in doubt.)
+     claims they say? (Cross-check against `references/md/` when in doubt.)
   5. **Code fidelity** (implementation/results sections only) — Does the
      prose match `code/`? Reproducibility hinges on this.
   6. **Scope** — Does this fit the thesis's stated contribution in

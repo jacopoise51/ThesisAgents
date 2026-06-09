@@ -11,12 +11,12 @@ Three checks, in order:
 
 1. **All cites resolve.** Every `\cite{KEY}` in `.tex` files has a matching
    entry in `references/bibliography.bib` AND a corresponding source in
-   `references/papers/` or `references/notes/`.
+   `references/md/`.
 
 2. **Cites match claims.** For each `\cite{KEY}`, open the corresponding
-   notes file (or PDF if needed) and confirm the cited source actually
-   supports the claim being made. Flag mismatches — a paper used to support
-   a claim it doesn't actually make is a serious problem.
+   file in `references/md/` and confirm the cited source actually supports
+   the claim being made. Flag mismatches — a paper used to support a claim
+   it doesn't actually make is a serious problem.
 
 3. **No missing citations.** Read each chapter and flag any factual claim,
    statistic, technique attribution, or established result that lacks a

@@ -22,8 +22,12 @@ the drafting/review loop.
 │   └── methodology-notes.md
 ├── references/
 │   ├── bibliography.bib    # BibTeX — owned by the citation-manager agent
-│   ├── papers/             # PDFs (NOT committed yet — drop yours here)
-│   └── notes/              # one note file per paper, from _template.md
+│   ├── papers/             # PDFs (NOT committed — drop yours here)
+│   ├── notes/              # one note file per paper, from _template.md
+│   └── md/                 # auto-generated Markdown conversions of the PDFs
+├── convert_papers.py       # CLI tool — converts PDFs in papers/ to Markdown
+├── .env                    # local secrets (API keys) — NOT committed
+├── pyproject.toml          # Python deps (managed with uv)
 ├── .claude/
 │   ├── agents/             # the 5 agent definitions
 │   └── settings.json       # tool permissions (Read/Edit/Write scopes)
@@ -38,6 +42,65 @@ the drafting/review loop.
 - A TeX distribution with `latexmk`, `biber`, and the packages listed in
   `thesis.tex` (TeX Live or MiKTeX both work).
 - [Claude Code](https://claude.com/claude-code) installed and signed in.
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) for Python
+  dependency management.
+
+---
+
+## Setup (first time)
+
+**1. Install Python dependencies with uv:**
+
+```bash
+uv sync
+```
+
+This creates a `.venv/` in the repo root and installs everything listed in
+`pyproject.toml` (including `markitdown[all]`). Run it once after cloning.
+
+**2. Configure your API key for LLM-based OCR (optional but recommended):**
+
+Copy the example block from `.env` comments and fill in your key:
+
+```
+# .env  (create this file at the repo root — it is gitignored)
+
+# Gemini (free tier available at aistudio.google.com/apikey)
+GEMINI_API_KEY=AIza...
+LLM=gemini
+LLM_MODEL=gemini-2.0-flash
+
+# — or OpenAI —
+# OPENAI_API_KEY=sk-proj-...
+# LLM=openai
+# LLM_MODEL=gpt-4o
+```
+
+Without a key the converter still works — it just won't OCR images or figures.
+
+---
+
+## Convert PDFs to Markdown
+
+Drop your PDFs into `references/papers/`, then run:
+
+```bash
+uv run python convert_papers.py
+```
+
+Converted files land in `references/md/` with the same filename (`.pdf` → `.md`).
+Already-converted files are skipped automatically — safe to re-run at any time.
+
+```bash
+# Force re-convert everything
+uv run python convert_papers.py --force
+
+# Use a different model just for this run
+uv run python convert_papers.py --llm gemini-1.5-pro
+```
+
+The Markdown files in `references/md/` are what the agents read when drafting
+and citing content. Do not edit them manually — re-run the converter instead.
 
 ---
 

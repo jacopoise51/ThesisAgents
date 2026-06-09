@@ -29,3 +29,19 @@ Thumbs.db
 
 # Claude Code local settings (per-user, not shared)
 .claude/settings.local.json
+
+# Local secrets — never commit
+.env
+
+# Python environment and lock file
+.venv/
+uv.lock
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Reference files — keep the folders, ignore the contents
+references/papers/*
+!references/papers/.gitkeep
+references/md/*
+!references/md/.gitkeep
