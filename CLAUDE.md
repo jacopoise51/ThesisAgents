@@ -24,7 +24,12 @@ For any chapter or section:
 3. The `professor` agent critiques rigor, structure, and argument.
 4. The writer revises based on the critique.
 5. The `citation-verifier` checks every claim is cited and every cite is real.
-6. The `humanizer` polishes voice last — never before review.
+6. Invoke the `/humanizer` skill (via `Skill` tool, name: `humanizer`) on the
+   just-written section. Pass it the path to the relevant `.tex` file and the
+   section boundaries so it can read the draft, apply every pattern from the
+   skill's checklist, and write the humanized text back in place with `Edit`.
+   The skill's "final rewrite" replaces the draft content — never run it before
+   the professor review and citation-verifier pass.
 
 ## Hard rules
 - No fabricated citations. Ever. If a claim can't be sourced from
